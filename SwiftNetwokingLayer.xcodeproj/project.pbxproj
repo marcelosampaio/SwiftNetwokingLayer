@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9C727F29214EC37B003C42F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F28214EC37B003C42F9 /* AppDelegate.swift */; };
-		9C727F2B214EC37B003C42F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F2A214EC37B003C42F9 /* ViewController.swift */; };
 		9C727F2E214EC37B003C42F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C727F2C214EC37B003C42F9 /* Main.storyboard */; };
 		9C727F30214EC3AE003C42F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C727F2F214EC3AE003C42F9 /* Assets.xcassets */; };
 		9C727F33214EC3AE003C42F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C727F31214EC3AE003C42F9 /* LaunchScreen.storyboard */; };
+		9C727F40214EC662003C42F9 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F3F214EC662003C42F9 /* MasterController.swift */; };
+		9C727F43214EC6E3003C42F9 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F42214EC6E3003C42F9 /* WebContent.swift */; };
+		9C727F45214EC73A003C42F9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F44214EC73A003C42F9 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C727F25214EC37B003C42F9 /* SwiftNetwokingLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNetwokingLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C727F28214EC37B003C42F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C727F2A214EC37B003C42F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C727F2D214EC37B003C42F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C727F2F214EC3AE003C42F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C727F32214EC3AE003C42F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C727F34214EC3AE003C42F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C727F3F214EC662003C42F9 /* MasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
+		9C727F42214EC6E3003C42F9 /* WebContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContent.swift; sourceTree = "<group>"; };
+		9C727F44214EC73A003C42F9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,64 @@
 		9C727F27214EC37B003C42F9 /* SwiftNetwokingLayer */ = {
 			isa = PBXGroup;
 			children = (
-				9C727F28214EC37B003C42F9 /* AppDelegate.swift */,
-				9C727F2A214EC37B003C42F9 /* ViewController.swift */,
-				9C727F2C214EC37B003C42F9 /* Main.storyboard */,
-				9C727F2F214EC3AE003C42F9 /* Assets.xcassets */,
-				9C727F31214EC3AE003C42F9 /* LaunchScreen.storyboard */,
+				9C727F41214EC67C003C42F9 /* User Interface */,
+				9C727F3E214EC624003C42F9 /* ServiceAPI */,
+				9C727F3D214EC61E003C42F9 /* Model */,
+				9C727F3C214EC616003C42F9 /* Controller */,
+				9C727F3B214EC60E003C42F9 /* Assets */,
+				9C727F3A214EC602003C42F9 /* Root */,
 				9C727F34214EC3AE003C42F9 /* Info.plist */,
 			);
 			path = SwiftNetwokingLayer;
+			sourceTree = "<group>";
+		};
+		9C727F3A214EC602003C42F9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9C727F28214EC37B003C42F9 /* AppDelegate.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9C727F3B214EC60E003C42F9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9C727F2F214EC3AE003C42F9 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9C727F3C214EC616003C42F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C727F3F214EC662003C42F9 /* MasterController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C727F3D214EC61E003C42F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C727F42214EC6E3003C42F9 /* WebContent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C727F3E214EC624003C42F9 /* ServiceAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9C727F44214EC73A003C42F9 /* WebService.swift */,
+			);
+			path = ServiceAPI;
+			sourceTree = "<group>";
+		};
+		9C727F41214EC67C003C42F9 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				9C727F2C214EC37B003C42F9 /* Main.storyboard */,
+				9C727F31214EC3AE003C42F9 /* LaunchScreen.storyboard */,
+			);
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C727F2B214EC37B003C42F9 /* ViewController.swift in Sources */,
 				9C727F29214EC37B003C42F9 /* AppDelegate.swift in Sources */,
+				9C727F40214EC662003C42F9 /* MasterController.swift in Sources */,
+				9C727F45214EC73A003C42F9 /* WebService.swift in Sources */,
+				9C727F43214EC6E3003C42F9 /* WebContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5U294U2N56;
 				INFOPLIST_FILE = SwiftNetwokingLayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5U294U2N56;
 				INFOPLIST_FILE = SwiftNetwokingLayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
