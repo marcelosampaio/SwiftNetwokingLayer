@@ -18,6 +18,7 @@ class MasterController: UITableViewController {
         super.viewDidLoad()
 
         // load app data
+        loadAppData()
     }
 
     // MARK: App Data Source
