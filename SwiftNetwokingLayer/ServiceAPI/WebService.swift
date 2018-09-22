@@ -8,20 +8,16 @@
 
 import Foundation
 
-private var url = URL(string: "https://myapi.vapor.cloud/myapi")
-
-typealias JSONDictionary = [String:Any]
-
+private var url = URL(string: "https://newsapi.org/v1/sources?language=en")
 class WebService {
-    func loadWebServiceData(completion: @escaping ([WebContent]) -> ()) {
+    func loadWebServiceData(completion: @escaping (WebContent) -> ()) {
         URLSession.shared.dataTask(with: url!) {
             data, response, error in
             if let data = data {
                 let json = try! JSONSerialization.jsonObject(with: data, options: [])
-                let dics = json as! [JSONDictionary]
-                
+                let dataDic : NSDictionary = json as! NSDictionary
                 DispatchQueue.main.async {
-                    completion(dics.compactMap(WebContent.init))
+                    completion(WebContent(dictionary: dataDic))
                 }
             }
         }.resume()

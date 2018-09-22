@@ -9,29 +9,22 @@
 import Foundation
 
 class WebContent {
-    var name : String!
-    var activity : String!
+    var sources = [Source]()
+    var status = String()
     
-//
-//    init() {
-//        self.name = String()
-//        self.activity = String()
-//    }
-//
-//    init(name: String, activity: String) {
-//        self.name = name
-//        self.activity = activity
-//    }
-    
-    init(dictionary: JSONDictionary) {
+    init(dictionary: NSDictionary) {
         
-        guard let name = dictionary["name"] as? String,
-        let activity = dictionary["activity"] as? String else {
+        guard let sourcesAux = dictionary["sources"] as? [NSDictionary],
+        let status = dictionary["status"] as? String else {
+            print("GOT OUTTA HERE     ###############################")
             return
         }
         // all ok
-        self.name = name
-        self.activity = activity
+        self.status = status
+        for dic in sourcesAux {
+            print("----- dic: \(dic)")
+            sources.append(Source(dictionary: dic))
+        }
     }
     
 }
