@@ -64,6 +64,7 @@
 		9C727F27214EC37B003C42F9 /* SwiftNetwokingLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9C727F6021582784003C42F9 /* Table View Data Source */,
 				9C727F5B2157B483003C42F9 /* View Model */,
 				9C727F41214EC67C003C42F9 /* User Interface */,
 				9C727F3E214EC624003C42F9 /* ServiceAPI */,
@@ -134,6 +135,13 @@
 			);
 			name = "View Model";
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		9C727F6021582784003C42F9 /* Table View Data Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Table View Data Source";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -17,7 +17,7 @@ class MasterController: UITableViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "Sources"
         // load app data
         loadAppData()
     }
