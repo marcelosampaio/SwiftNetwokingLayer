@@ -16,13 +16,11 @@ class WebContent {
         
         guard let sourcesAux = dictionary["sources"] as? [NSDictionary],
         let status = dictionary["status"] as? String else {
-            print("GOT OUTTA HERE     ###############################")
             return
         }
         // all ok
         self.status = status
         for dic in sourcesAux {
-            print("----- dic: \(dic)")
             sources.append(Source(dictionary: dic))
         }
     }
