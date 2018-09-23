@@ -12,9 +12,8 @@ class MasterController: UITableViewController {
 
     // MARK: - Properties
     private var sources : SourcesViewModel!
-    
-//    private var willBeDeprecated = [Source]()
-    
+    private var webService = WebService()
+
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +24,11 @@ class MasterController: UITableViewController {
 
     // MARK: App Data Source
     private func loadAppData() {
-        WebService().loadWebServiceData { (webContent) in
+        self.sources = SourcesViewModel(webService: self.webService, completion: {
             // completion
-            if webContent.status == "ok" && webContent.sources.count > 0 {
-                self.sources = SourcesViewModel()
-                self.sources.populateSources(webContent.sources)
-                self.tableView.reloadData()
-            }
-        }
+            self.tableView.reloadData()
+        })
+
     }
     
     // MARK: - TableView Delegate

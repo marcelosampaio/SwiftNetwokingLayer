@@ -11,12 +11,16 @@ import Foundation
 class SourcesViewModel {
     var sources : [SourceViewModel] = [SourceViewModel]()
 
-    func populateSources(_ sources: [Source]) {
-        self.sources = sources.map(SourceViewModel.init)
+    init(webService: WebService, completion: @escaping () -> ()) {
+        webService.loadWebServiceData { (webContent) in
+            // completion
+            if webContent.status == "ok" && webContent.sources.count > 0 {
+                self.sources = webContent.sources.map(SourceViewModel.init)
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
+        }
     }
-    
-//    init(_ sources: [Source]) {
-//        self.sources = sources.map(SourceViewModel.init)
-//    }
     
 }
