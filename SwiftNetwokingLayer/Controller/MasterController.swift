@@ -41,14 +41,14 @@ class MasterController: UITableViewController {
     
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SourcesCell
         let source = self.sources.sources[indexPath.row]
-        cell.textLabel?.text = source.name
-        cell.textLabel?.numberOfLines = 0
+        cell.sourcesTitle?.text = source.name
+        cell.sourcesTitle?.numberOfLines = 0
         
         
-        cell.detailTextLabel?.text = source.description
-        cell.detailTextLabel?.numberOfLines = 0
+        cell.sourcesDescription?.text = source.description
+        cell.sourcesDescription?.numberOfLines = 0
         
         return cell
     }

@@ -17,6 +17,7 @@
 		9C727F4E2156A4D9003C42F9 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F4D2156A4D9003C42F9 /* Source.swift */; };
 		9C727F5D2157B4B7003C42F9 /* SourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F5C2157B4B7003C42F9 /* SourcesViewModel.swift */; };
 		9C727F5F2157B4C8003C42F9 /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C727F5E2157B4C8003C42F9 /* SourceViewModel.swift */; };
+		9C98233F21592482006B6DEB /* SourcesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C98233E21592482006B6DEB /* SourcesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9C727F4D2156A4D9003C42F9 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		9C727F5C2157B4B7003C42F9 /* SourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewModel.swift; sourceTree = "<group>"; };
 		9C727F5E2157B4C8003C42F9 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
+		9C98233E21592482006B6DEB /* SourcesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		9C727F27214EC37B003C42F9 /* SwiftNetwokingLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9C98233D21592452006B6DEB /* Table View Cell */,
 				9C727F6021582784003C42F9 /* Table View Data Source */,
 				9C727F5B2157B483003C42F9 /* View Model */,
 				9C727F41214EC67C003C42F9 /* User Interface */,
@@ -144,6 +147,14 @@
 			path = "Table View Data Source";
 			sourceTree = "<group>";
 		};
+		9C98233D21592452006B6DEB /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9C98233E21592482006B6DEB /* SourcesCell.swift */,
+			);
+			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C98233F21592482006B6DEB /* SourcesCell.swift in Sources */,
 				9C727F29214EC37B003C42F9 /* AppDelegate.swift in Sources */,
 				9C727F40214EC662003C42F9 /* MasterController.swift in Sources */,
 				9C727F45214EC73A003C42F9 /* WebService.swift in Sources */,
