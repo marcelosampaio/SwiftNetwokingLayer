@@ -13,6 +13,8 @@ class MasterController: UITableViewController {
     // MARK: - Properties
     private var sources : SourcesViewModel!
     private var webService = WebService()
+    private var dataSource : TableViewDataSource<SourcesCell,SourceViewModel>!
+    private var cellIdentifier = "Cell"
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -26,31 +28,14 @@ class MasterController: UITableViewController {
     private func loadAppData() {
         self.sources = SourcesViewModel(webService: self.webService, completion: {
             // completion
+            self.dataSource = TableViewDataSource(cellIdentifier: self.cellIdentifier, items: self.sources.sources, configureCell: { (cell, vm) in
+                // completion
+                cell.sourcesTitle.text = vm.name
+                cell.sourcesDescription.text = vm.description
+            })
+            self.tableView.dataSource = self.dataSource
             self.tableView.reloadData()
         })
 
     }
-    
-    // MARK: - TableView Delegate
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.sources == nil {
-            return 0
-        }else{
-            return self.sources.sources.count
-        }
-    
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SourcesCell
-        let source = self.sources.sources[indexPath.row]
-        cell.sourcesTitle?.text = source.name
-        cell.sourcesTitle?.numberOfLines = 0
-        
-        
-        cell.sourcesDescription?.text = source.description
-        cell.sourcesDescription?.numberOfLines = 0
-        
-        return cell
-    }
- 
 }

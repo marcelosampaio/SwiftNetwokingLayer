@@ -1,5 +1,5 @@
 //
-//  SourcesDataSource.swift
+//  TableViewDataSource.swift
 //  SwiftNetwokingLayer
 //
 //  Created by Marcelo on 24/09/18.
@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-class SourcesDataSource<Cell: UITableViewCell, ViewModel> : NSObject, UITableViewDataSource {
+class TableViewDataSource<Cell: UITableViewCell, ViewModel> : NSObject, UITableViewDataSource {
     
     private var cellIdentifier : String!
     private var items : [ViewModel]!
     var configureCell : (Cell, ViewModel) -> ()
+    
     init(cellIdentifier: String, items: [ViewModel], configureCell: @escaping (Cell, ViewModel) -> ()) {
         self.cellIdentifier = cellIdentifier
         self.items = items
@@ -25,7 +26,10 @@ class SourcesDataSource<Cell: UITableViewCell, ViewModel> : NSObject, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! Cell
+        let item = self.items[indexPath.row]
+        self.configureCell(cell, item)
+        return cell
     }
     
 }
