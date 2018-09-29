@@ -10,8 +10,9 @@ import Foundation
 
 class SourcesViewModel {
     var sources : [SourceViewModel] = [SourceViewModel]()
-
-    init(webService: WebService, completion: @escaping () -> ()) {
+    private var webService = WebService()
+    
+    init(completion: @escaping () -> ()) {
         webService.loadWebServiceData { (webContent) in
             // completion
             if webContent.status == "ok" && webContent.sources.count > 0 {
@@ -22,5 +23,6 @@ class SourcesViewModel {
             }
         }
     }
+
     
 }

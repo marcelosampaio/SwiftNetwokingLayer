@@ -12,7 +12,6 @@ class MasterController: UITableViewController {
 
     // MARK: - Properties
     private var sources : SourcesViewModel!
-    private var webService = WebService()
     private var dataSource : TableViewDataSource<SourcesCell,SourceViewModel>!
     private var cellIdentifier = "Cell"
 
@@ -26,7 +25,7 @@ class MasterController: UITableViewController {
 
     // MARK: App Data Source
     private func loadAppData() {
-        self.sources = SourcesViewModel(webService: self.webService, completion: {
+        self.sources = SourcesViewModel(completion: {
             // completion
             self.dataSource = TableViewDataSource(cellIdentifier: self.cellIdentifier, items: self.sources.sources, configureCell: { (cell, vm) in
                 // completion
