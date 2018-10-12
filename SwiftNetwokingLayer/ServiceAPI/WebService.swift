@@ -8,9 +8,18 @@
 
 import Foundation
 
-private var url = URL(string: "https://newsapi.org/v1/sources?language=en")
+//private var url = URL(string: "https://newsapi.org/v1/sources?language=en")
+
+
+
 class WebService {
-    func loadWebServiceData(completion: @escaping (WebContent) -> ()) {
+    
+    // MARK: - Data Retrieval
+    func getNewsSources(completion: @escaping (WebContent) -> ()) {
+        // get url
+        let url = URL(string: WebService.getEndpoint("getSources"))
+        
+        // request web service
         URLSession.shared.dataTask(with: url!) {
             data, response, error in
             if let data = data {
@@ -22,4 +31,28 @@ class WebService {
             }
         }.resume()
     }
+    
+    
+    
+    // MARK: - Class Helper
+    class func getEndpoint(_ identifier: String) -> String {
+        
+        var result = String()
+        
+        if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
+            
+            // file root is a dictionary
+            if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
+                print ("****** dic = \(dic)")
+                
+                result = dic[identifier] as! String
+                
+                
+            }
+        }
+        print("***2*** ACTION: \(identifier)")
+        return result
+    }
+    
+    
 }

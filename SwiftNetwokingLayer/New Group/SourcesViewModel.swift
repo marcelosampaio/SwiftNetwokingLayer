@@ -13,7 +13,7 @@ class SourcesViewModel {
     private var webService = WebService()
     
     init(completion: @escaping () -> ()) {
-        webService.loadWebServiceData { (webContent) in
+        webService.getNewsSources { (webContent) in
             // completion
             if webContent.status == "ok" && webContent.sources.count > 0 {
                 self.sources = webContent.sources.map(SourceViewModel.init)
